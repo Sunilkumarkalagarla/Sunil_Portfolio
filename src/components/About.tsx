@@ -50,15 +50,15 @@ const About = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-2">
                 <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/lovable-uploads/dced660c-c7a8-4ce0-adbd-867aa4fa9405.png"
-                    alt="Sunil Kumar Kalagarla" 
+                    src="/lovable-uploads/259c05e1-878d-472d-89e8-65275ee6c50b.png"
+                    alt="Sunil Kumar Kalagarla Graduation" 
                     className="w-full h-full object-cover object-center scale-110 rounded-full"
                     loading="lazy"
                   />
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center text-2xl">
-                👨‍💻
+                🎓
               </div>
             </div>
           </div>

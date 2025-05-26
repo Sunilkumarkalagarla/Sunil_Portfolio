@@ -1,29 +1,33 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+import { Star, Mail } from 'lucide-react';
 
 const FeaturedWork = () => {
   const placeholderCards = [
     {
       id: 1,
       title: "AI-Powered Analytics Platform",
-      subtitle: "Coming Soon - Revolutionary data insights tool"
+      subtitle: "Coming Soon - Revolutionary data insights tool",
+      icon: Star
     },
     {
       id: 2,
-      title: "Full-Stack E-Commerce Solution",
-      subtitle: "Coming Soon - Modern shopping experience"
+      title: "Automated Email Sending Tool",
+      subtitle: "Coming Soon - To automate and make your job search easier",
+      icon: Mail
     },
     {
       id: 3,
       title: "Cloud-Native Microservices",
-      subtitle: "Coming Soon - Scalable backend architecture"
+      subtitle: "Coming Soon - Scalable backend architecture",
+      icon: Star
     },
     {
       id: 4,
       title: "Mobile-First Web Application",
-      subtitle: "Coming Soon - Responsive user interface"
+      subtitle: "Coming Soon - Responsive user interface",
+      icon: Star
     }
   ];
 
@@ -39,23 +43,26 @@ const FeaturedWork = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {placeholderCards.map((card) => (
-            <Card key={card.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border border-gray-200">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                  <Star className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-semibold text-gray-900 mb-2">
-                  {card.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-gray-600 text-base">
-                  {card.subtitle}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {placeholderCards.map((card) => {
+            const IconComponent = card.icon;
+            return (
+              <Card key={card.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border border-gray-200">
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                    <IconComponent className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 mb-2">
+                    {card.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <CardDescription className="text-gray-600 text-base">
+                    {card.subtitle}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Download, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -26,15 +26,6 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105"
-                  onClick={() => window.open('#', '_blank')}
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
-                
                 <div className="flex gap-4">
                   <Button 
                     variant="outline" 
@@ -88,7 +79,7 @@ const Hero = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 p-3 shadow-xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img 
-                    src="/lovable-uploads/dced660c-c7a8-4ce0-adbd-867aa4fa9405.png"
+                    src="/lovable-uploads/db6a59da-1b5a-4e8b-a5da-431b2bf7f2d6.png"
                     alt="Sunil Kumar Kalagarla" 
                     className="w-full h-full object-cover object-center"
                     loading="eager"
