@@ -90,7 +90,7 @@ const Hero = () => {
                   <img 
                     src="/lovable-uploads/dced660c-c7a8-4ce0-adbd-867aa4fa9405.png"
                     alt="Sunil Kumar Kalagarla" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center scale-110"
                     loading="eager"
                   />
                 </div>

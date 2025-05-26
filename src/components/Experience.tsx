@@ -5,54 +5,58 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const Experience = () => {
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "Software Developer",
       company: "BNY Mellon",
-      period: "2022 - Present",
-      description: "Developed and maintained enterprise-level financial applications serving millions of users.",
+      period: "Mar 2025 - Present",
+      location: "Indiana, USA",
+      description: "Built Python/FastAPI services for trade execution, reconciliation, and cash management.",
       achievements: [
-        "Built scalable microservices using Java Spring Boot and React",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Led cross-functional team of 5 developers on critical projects",
-        "Optimized database queries improving system performance by 40%"
+        "Built Python/FastAPI services for trade execution, reconciliation, and cash management, cutting a key SQL query's latency by 40%",
+        "Designed new schemas and stored procedures that handle 15,000+ trades/min while meeting real-time compliance needs",
+        "Automated live market-data ingestion with Kafka and Python, giving analysts sub-second updates on pricing and P&L",
+        "Strengthened React dashboards and a Jenkins-based CI/CD pipeline, delivering two releases with zero critical defects"
       ],
       color: "bg-blue-50 border-blue-200"
     },
     {
-      title: "Full Stack Developer",
-      company: "Dell Technologies",
-      period: "2021 - 2022",
-      description: "Worked on cloud infrastructure and automation tools for enterprise clients.",
+      title: "Python Developer (Research Assistant)",
+      company: "Purdue University",
+      period: "Sep 2024 - Dec 2024",
+      location: "Indiana, USA",
+      description: "Created serverless AWS Lambda workflows in Python to process high-volume campus transactions.",
       achievements: [
-        "Developed cloud-native applications using AWS and Kubernetes",
-        "Created automated testing frameworks increasing code coverage to 95%",
-        "Collaborated with DevOps team to streamline deployment processes",
-        "Mentored junior developers and conducted code reviews"
-      ],
-      color: "bg-green-50 border-green-200"
-    },
-    {
-      title: "Research Assistant",
-      company: "Purdue University Northwest",
-      period: "2020 - 2021",
-      description: "Conducted research in machine learning and artificial intelligence applications.",
-      achievements: [
-        "Published research on neural network optimization techniques",
-        "Developed ML models for predictive analytics with 92% accuracy",
-        "Assisted in teaching computer science courses to 100+ students",
-        "Collaborated on NSF-funded research projects"
+        "Created serverless AWS Lambda workflows in Python to process high-volume campus transactions with no manual intervention",
+        "Automated ETL and Power BI reporting, supplying insights to 50+ users and saving hours of monthly effort",
+        "Built RESTful APIs backed by S3 that served 20+ requests/sec, halving data-retrieval time",
+        "Tuned MongoDB and managed Git-based collaboration, cutting query latency 50% and streamlining team delivery"
       ],
       color: "bg-purple-50 border-purple-200"
     },
     {
+      title: "Software Developer",
+      company: "Dell Technologies",
+      period: "Feb 2021 - Nov 2022",
+      location: "India",
+      description: "Engineered Python/Django REST APIs for payment and BI systems.",
+      achievements: [
+        "Engineered Python/Django REST APIs for payment and BI systems, trimming response time by 0.5s per request",
+        "Cleaned 300+ datasets with Pandas and boosted TensorFlow failure-detection models, improving accuracy and runtime",
+        "Automated Tableau reporting and CI/CD pipelines, saving 15 hrs/week and shipping 5+ features per quarter",
+        "Designed DynamoDB-backed microservices that served 50+ concurrent users, maintaining high performance under peak loads"
+      ],
+      color: "bg-green-50 border-green-200"
+    },
+    {
       title: "Software Developer Intern",
       company: "Trigent Software",
-      period: "2019 - 2020",
-      description: "Gained hands-on experience in web development and software engineering practices.",
+      period: "Jul 2020 - Jan 2021",
+      location: "India",
+      description: "Optimized SQL queries and indexing, reducing execution time across web applications.",
       achievements: [
-        "Built responsive web applications using React and Node.js",
-        "Participated in agile development methodologies",
-        "Contributed to client projects with strict deadlines",
-        "Learned industry best practices for software development"
+        "Optimized SQL queries and indexing, reducing execution time by 30s across three web apps",
+        "Deployed an AWS Redshift warehouse, enabling near-real-time analytics and faster executive reports",
+        "Crafted PostgreSQL schemas and triggers to ensure data integrity for daily transactions",
+        "Built Excel KPI dashboards with pivot tables and charts, giving stakeholders clear, up-to-date project metrics"
       ],
       color: "bg-orange-50 border-orange-200"
     }
@@ -76,11 +80,14 @@ const Experience = () => {
                 <CardTitle className="text-xl font-bold text-gray-900">
                   {exp.title}
                 </CardTitle>
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-blue-600">{exp.company}</span>
-                  <span className="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">
-                    {exp.period}
-                  </span>
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg font-semibold text-blue-600">{exp.company}</span>
+                    <span className="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <span className="text-sm text-gray-600 italic">{exp.location}</span>
                 </div>
               </CardHeader>
               <CardContent>

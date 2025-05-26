@@ -13,6 +13,7 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,34 +23,64 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend service
-    console.log('Form submitted:', formData);
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Using Formspree for form handling
+      const response = await fetch('https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Portfolio Contact from ${formData.name}`,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      content: "sunil.kalagarla@example.com",
-      action: () => window.open('mailto:sunil.kalagarla@example.com')
+      content: "ksunilkumar1249@gmail.com",
+      action: () => window.open('mailto:ksunilkumar1249@gmail.com')
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      action: () => window.open('tel:+15551234567')
+      content: "+1 (219) 916-0571",
+      action: () => window.open('tel:+12199160571')
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      content: "Northwest Indiana, USA",
+      content: "Hammond, Indiana, USA",
       action: null
     }
   ];
@@ -58,13 +89,13 @@ const Contact = () => {
     {
       icon: <Github className="h-8 w-8" />,
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/Sunilkumarkalagarla/",
       color: "hover:text-gray-700"
     },
     {
       icon: <Linkedin className="h-8 w-8" />,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/sunil1249/",
       color: "hover:text-blue-600"
     }
   ];
@@ -138,9 +169,10 @@ const Contact = () => {
 
                 <Button 
                   type="submit" 
+                  disabled={isSubmitting}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg transition-all duration-200 hover:scale-105"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
