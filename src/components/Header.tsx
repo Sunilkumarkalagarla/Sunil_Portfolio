@@ -15,17 +15,22 @@ const Header = () => {
   }, []);
 
   const navItems = [
+    { label: 'Home', href: '#hero' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Featured Work', href: '#featured-work' },
     { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href === '#hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -37,7 +42,12 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold text-gray-900">SK</span>
+            <button
+              onClick={() => scrollToSection('#hero')}
+              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+            >
+              SK
+            </button>
           </div>
 
           {/* Desktop Navigation */}

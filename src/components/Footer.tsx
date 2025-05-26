@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,25 +18,32 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <button
-                onClick={() => window.open('https://github.com', '_blank')}
+                onClick={() => window.open('https://github.com/Sunilkumarkalagarla/', '_blank')}
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
                 title="GitHub"
               >
                 <Github className="h-5 w-5" />
               </button>
               <button
-                onClick={() => window.open('https://linkedin.com', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/sunil1249/', '_blank')}
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
                 title="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </button>
               <button
-                onClick={() => window.open('mailto:sunil.kalagarla@example.com')}
+                onClick={() => window.open('mailto:ksunilkumar1249@gmail.com')}
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
                 title="Email"
               >
                 <Mail className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => window.open('tel:+12199160571')}
+                className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                title="Phone"
+              >
+                <Phone className="h-5 w-5" />
               </button>
             </div>
           </div>
@@ -45,11 +52,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+              {['About', 'Experience', 'Featured Work', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => {
-                      const element = document.querySelector(`#${item.toLowerCase()}`);
+                      const element = document.querySelector(`#${item.toLowerCase().replace(' ', '-')}`);
                       if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
@@ -69,7 +76,7 @@ const Footer = () => {
             © {currentYear} Sunil Kumar Kalagarla. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-4 md:mt-0">
-            Built with React, TypeScript & Tailwind CSS
+            Hammond, Indiana, USA | Built with React, TypeScript & Tailwind CSS
           </p>
         </div>
       </div>

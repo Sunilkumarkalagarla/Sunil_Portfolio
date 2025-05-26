@@ -38,8 +38,8 @@ const About = () => {
                   <p className="text-gray-600">M.S. Computer Science<br />Purdue University Northwest</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Experience</h4>
-                  <p className="text-gray-600">3+ Years<br />Software Development</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Location</h4>
+                  <p className="text-gray-600">Hammond, Indiana, USA</p>
                 </div>
               </div>
             </div>
@@ -50,9 +50,10 @@ const About = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 p-2">
                 <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                    src="/lovable-uploads/dced660c-c7a8-4ce0-adbd-867aa4fa9405.png"
                     alt="Sunil Kumar Kalagarla" 
                     className="w-full h-full object-cover rounded-full"
+                    loading="lazy"
                   />
                 </div>
               </div>
