@@ -1,24 +1,19 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, Mail, MessageCircle, ExternalLink, Play } from 'lucide-react';
+import { Star, Mail, MessageCircle, ExternalLink } from 'lucide-react';
 
 const FeaturedWork = () => {
   const placeholderCards = [
     {
       id: 1,
-      title: "Pre-Call Prep AI Agent",
+      title: "SUN-AI Sales Copilot",
       subtitle: "Live demo – 60-second prospect briefing tool",
       description: "Built on Relevance AI. Paste a company website URL and a decision-maker's LinkedIn URL, get an instant brief with company snapshot, recent news, role context, and tailored talking points.",
       icon: MessageCircle,
       primaryLink: {
         label: "Try the Live Agent",
         url: "https://app.relevanceai.com/agents/bcbe5a/5d092a51556d-4cce-b7ce-ecf0bb340836/737f1a3f-7e46-4ebe-8313-78a9323b9d5b/embed-chat"
-      },
-      secondaryLink: {
-        label: "Watch Demo Video",
-        action: "video" // We'll handle this as a placeholder for now
       },
       isLive: true
     },
@@ -41,11 +36,6 @@ const FeaturedWork = () => {
       icon: Star
     }
   ];
-
-  const handleVideoDemo = () => {
-    // Placeholder for video demo functionality
-    alert("Demo video functionality would open here");
-  };
 
   return (
     <section id="featured-work" className="py-20 bg-gray-50">
@@ -77,42 +67,27 @@ const FeaturedWork = () => {
                   </CardDescription>
                   
                   {card.description && (
-                    <p className="text-sm text-gray-500 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-sm text-gray-500 mb-4">
                       {card.description}
                     </p>
                   )}
                   
                   {card.primaryLink && (
-                    <div className="space-y-2">
-                      <Button 
-                        asChild
-                        className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-                        size="sm"
+                    <Button 
+                      asChild
+                      className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                      size="sm"
+                    >
+                      <a 
+                        href={card.primaryLink.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={card.primaryLink.label}
                       >
-                        <a 
-                          href={card.primaryLink.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          aria-label={card.primaryLink.label}
-                        >
-                          {card.primaryLink.label}
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                      
-                      {card.secondaryLink && (
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="w-full"
-                          onClick={handleVideoDemo}
-                          aria-label={card.secondaryLink.label}
-                        >
-                          <Play className="mr-2 h-4 w-4" />
-                          {card.secondaryLink.label}
-                        </Button>
-                      )}
-                    </div>
+                        {card.primaryLink.label}
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
                   )}
                 </CardContent>
               </Card>
