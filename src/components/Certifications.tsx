@@ -37,7 +37,7 @@ const Certifications: React.FC = () => {
           </p>
         </header>
 
-        <div className="relative">
+        <div className="relative mx-auto max-w-2xl md:max-w-3xl">
           {/* Timeline rail */}
           <div
             className="absolute left-5 top-0 bottom-0 w-px bg-border"
