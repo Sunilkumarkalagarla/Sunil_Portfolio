@@ -14,16 +14,11 @@ const About = () => {
           <div className="order-2 lg:order-1">
             <div className="prose prose-lg text-gray-600">
               <p className="mb-6">
-                I'm a passionate Software Engineer with an M.S. in Computer Science from 
-                Purdue University Northwest and over 3 years of hands-on experience in 
-                developing scalable software solutions.
+                I’m a results-driven Software Engineer with an M.S. in Computer Science from Purdue University Northwest and 3+ years of experience building scalable, high-performance applications. I specialize in Python, AWS, and full-stack development, delivering secure, reliable, and efficient solutions.
               </p>
               
               <p className="mb-6">
-                My expertise spans across full-stack development, artificial intelligence, 
-                and cloud technologies. I've had the privilege of working with industry 
-                leaders like BNY Mellon and Dell, where I've contributed to mission-critical 
-                applications serving millions of users.
+                I have worked with industry leaders including BNY Mellon and Dell, contributing to mission-critical systems that improved performance, automation, and user experience for large-scale applications serving thousands of users.
               </p>
               
               <p className="mb-6">
@@ -39,7 +34,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Location</h4>
-                  <p className="text-gray-600">Hammond, Indiana, USA</p>
+                  <p className="text-gray-600">Greater Chicago, USA</p>
                 </div>
               </div>
             </div>
