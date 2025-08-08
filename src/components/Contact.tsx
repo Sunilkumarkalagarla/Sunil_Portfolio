@@ -80,7 +80,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      content: "Hammond, Indiana, USA",
+      content: "Greater Chicago, USA",
       action: null
     }
   ];

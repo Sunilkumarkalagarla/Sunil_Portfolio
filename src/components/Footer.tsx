@@ -76,7 +76,7 @@ const Footer = () => {
             © {currentYear} Sunil Kumar Kalagarla. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-4 md:mt-0">
-            Hammond, Indiana, USA | Built with React, TypeScript & Tailwind CSS
+            Greater Chicago, USA | Built with React, TypeScript & Tailwind CSS
           </p>
         </div>
       </div>
