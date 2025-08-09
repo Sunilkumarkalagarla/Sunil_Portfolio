@@ -21,11 +21,6 @@ const About = () => {
                 I have worked with industry leaders including BNY Mellon and Dell, contributing to mission-critical systems that improved performance, automation, and user experience for large-scale applications serving thousands of users.
               </p>
               
-              <p className="mb-6">
-                When I'm not coding, you'll find me in the kitchen experimenting with new 
-                recipes and cooking techniques. I believe that creativity in cooking 
-                translates beautifully to problem-solving in software development.
-              </p>
 
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div>

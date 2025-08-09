@@ -7,7 +7,7 @@ const Experience = () => {
     {
       title: "Software Developer",
       company: "BNY Mellon",
-      period: "Mar 2025 - Present",
+      period: "Mar 2025 - Jun 2025",
       location: "Indiana, USA",
       description: "Built Python/FastAPI services for trade execution, reconciliation, and cash management.",
       achievements: [

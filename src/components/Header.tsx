@@ -20,7 +20,6 @@ const Header = () => {
     { label: 'Experience', href: '#experience' },
     { label: 'Certifications', href: '#certifications' },
     { label: 'Featured Work', href: '#featured-work' },
-    { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -95,7 +94,7 @@ const Header = () => {
         )}
       </nav>
       <div role="status" aria-live="polite" className="bg-destructive text-destructive-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-sm sm:text-sm flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-sm sm:text-sm flex flex-row flex-wrap items-center justify-center gap-3">
           <span>
             Currently looking for Full Time opportunities as a Software Development Engineer
           </span>
@@ -106,7 +105,7 @@ const Header = () => {
               rel="noopener noreferrer"
               aria-label="Reach out to me on LinkedIn"
             >
-              Reach out to me
+              Connect With Me
             </a>
           </Button>
         </div>

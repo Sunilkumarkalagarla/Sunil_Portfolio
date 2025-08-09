@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['About', 'Experience', 'Featured Work', 'Skills', 'Contact'].map((item) => (
+              {['About', 'Experience', 'Certifications', 'Featured Work', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => {
