@@ -18,14 +18,14 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <button
-                onClick={() => window.open('https://github.com/Sunilkumarkalagarla/', '_blank')}
+                onClick={() => window.open('https://github.com/Sunilkumarkalagarla/', '_blank', 'noopener,noreferrer')}
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
                 title="GitHub"
               >
                 <Github className="h-5 w-5" />
               </button>
               <button
-                onClick={() => window.open('https://www.linkedin.com/in/sunil1249/', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/sunil1249/', '_blank', 'noopener,noreferrer')}
                 className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200"
                 title="LinkedIn"
               >

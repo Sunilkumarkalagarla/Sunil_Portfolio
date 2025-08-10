@@ -54,10 +54,10 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
       setFormData({ name: '', email: '', message: '' });
     } finally {
       setIsSubmitting(false);
@@ -174,6 +174,10 @@ const Contact = () => {
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
+                <p className="mt-3 text-xs text-gray-500">
+                  By submitting, you agree your info will be sent to Formspree for processing. 
+                  <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline">Privacy Policy</a>.
+                </p>
               </form>
             </CardContent>
           </Card>
@@ -215,7 +219,7 @@ const Contact = () => {
                   {socialLinks.map((link, index) => (
                     <button
                       key={index}
-                      onClick={() => window.open(link.url, '_blank')}
+                      onClick={() => window.open(link.url, '_blank', 'noopener,noreferrer')}
                       className={`p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-200 hover:scale-110 ${link.color}`}
                       title={link.name}
                     >

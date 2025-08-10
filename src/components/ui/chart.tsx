@@ -6,6 +6,10 @@ import { cn } from "@/lib/utils"
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" } as const
 
+// Basic CSS value sanitizer to prevent style injection
+const SAFE_CSS_VALUE = /^[\w\s#(),.%:-]+$/
+const sanitizeCssValue = (input?: string) => (input && SAFE_CSS_VALUE.test(input) ? input : undefined)
+
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode
@@ -86,7 +90,8 @@ ${colorConfig
     const color =
       itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
       itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
+    const safeColor = sanitizeCssValue(color)
+    return safeColor ? `  --color-${key}: ${safeColor};` : null
   })
   .join("\n")}
 }

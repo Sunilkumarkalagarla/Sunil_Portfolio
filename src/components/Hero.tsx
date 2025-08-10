@@ -31,7 +31,7 @@ const Hero = () => {
                     variant="outline" 
                     size="lg"
                     className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 transition-all duration-200 hover:scale-105"
-                    onClick={() => window.open('https://github.com/Sunilkumarkalagarla/', '_blank')}
+                    onClick={() => window.open('https://github.com/Sunilkumarkalagarla/', '_blank', 'noopener,noreferrer')}
                   >
                     <Github className="mr-2 h-5 w-5" />
                     GitHub
@@ -41,7 +41,7 @@ const Hero = () => {
                     variant="outline" 
                     size="lg"
                     className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 transition-all duration-200 hover:scale-105"
-                    onClick={() => window.open('https://www.linkedin.com/in/sunil1249/', '_blank')}
+                    onClick={() => window.open('https://www.linkedin.com/in/sunil1249/', '_blank', 'noopener,noreferrer')}
                   >
                     <Linkedin className="mr-2 h-5 w-5" />
                     LinkedIn

@@ -107,7 +107,7 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open(project.github, '_blank')}
+                    onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                     className="flex-1"
                   >
                     <Github className="mr-2 h-4 w-4" />
@@ -115,7 +115,7 @@ const Projects = () => {
                   </Button>
                   <Button 
                     size="sm"
-                    onClick={() => window.open(project.demo, '_blank')}
+                     onClick={() => window.open(project.demo, '_blank', 'noopener,noreferrer')}
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
@@ -162,7 +162,7 @@ const Projects = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open(project.github, '_blank')}
+                    onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                     className="flex-1 text-xs"
                   >
                     <Github className="mr-1 h-3 w-3" />
@@ -170,7 +170,7 @@ const Projects = () => {
                   </Button>
                   <Button 
                     size="sm"
-                    onClick={() => window.open(project.demo, '_blank')}
+                    onClick={() => window.open(project.demo, '_blank', 'noopener,noreferrer')}
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-xs"
                   >
                     <ExternalLink className="mr-1 h-3 w-3" />
