@@ -15,13 +15,23 @@ const FeaturedWork = () => {
         label: "Try the Live Agent",
         url: "https://app.relevanceai.com/agents/bcbe5a/5d092a51556d-4cce-b7ce-ecf0bb340836/737f1a3f-7e46-4ebe-8313-78a9323b9d5b/embed-chat"
       },
-      isLive: true
+      isLive: true,
+      gradientClass: "bg-gradient-to-br from-purple-500 to-purple-600",
+      buttonClass: "bg-purple-600 hover:bg-purple-700 text-white"
     },
     {
       id: 2,
-      title: "Automated Email Sending Tool",
-      subtitle: "Coming Soon - To automate and make your job search easier",
-      icon: Mail
+      title: "LedgerLens",
+      subtitle: "Live demo – Instant variance & customer-impact tool",
+      description: "Compare two finance CSVs, instantly see what changed, why it matters, and how it affects customers. View clean tables, top-10 charts, and copy ready-to-send executive & customer summaries in under a minute.",
+      logo: "/lovable-uploads/c08bc30c-5323-4cbe-b5c7-844f609989cc.png",
+      primaryLink: {
+        label: "Open Live Demo",
+        url: "https://ledgerlens.thesunilkumar.com"
+      },
+      isLive: true,
+      gradientClass: "bg-gradient-to-br from-teal-500 to-teal-600",
+      buttonClass: "bg-teal-600 hover:bg-teal-700 text-white"
     },
     {
       id: 3,
@@ -54,8 +64,12 @@ const FeaturedWork = () => {
             return (
               <Card key={card.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border border-gray-200 group">
                 <CardHeader className="text-center pb-4">
-                  <div className={`mx-auto mb-4 w-16 h-16 ${card.isLive ? 'bg-gradient-to-br from-purple-500 to-purple-600' : 'bg-gradient-to-br from-blue-500 to-blue-600'} rounded-full flex items-center justify-center`}>
-                    <IconComponent className="h-8 w-8 text-white" />
+                  <div className={`mx-auto mb-4 w-16 h-16 ${card.gradientClass || (card.isLive ? 'bg-gradient-to-br from-purple-500 to-purple-600' : 'bg-gradient-to-br from-blue-500 to-blue-600')} rounded-full flex items-center justify-center`}>
+                    {card.logo ? (
+                      <img src={card.logo} alt={`${card.title} logo`} className="h-8 w-8 object-contain" loading="lazy" />
+                    ) : (
+                      <IconComponent className="h-8 w-8 text-white" />
+                    )}
                   </div>
                   <CardTitle className="text-xl font-semibold text-gray-900 mb-2">
                     {card.title}
@@ -75,7 +89,7 @@ const FeaturedWork = () => {
                   {card.primaryLink && (
                     <Button 
                       asChild
-                      className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                      className={`w-full ${card.buttonClass || (card.isLive ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white')}`}
                       size="sm"
                     >
                       <a 
