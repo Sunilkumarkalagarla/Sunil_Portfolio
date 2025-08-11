@@ -11,10 +11,16 @@ const Hero = () => {
           {/* Content Section */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <div className="animate-fade-in">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Sunil Kumar
-                <span className="block text-blue-600">Kalagarla</span>
-              </h1>
+              <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
+                <img 
+                  src="/lovable-uploads/aea5aa5e-3d67-4557-a49c-9825d6c3102d.png" 
+                  alt="Python Logo" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
+                />
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Sunil Kumar Kalagarla
+                </h1>
+              </div>
               
               <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl leading-relaxed">
                 Software Engineer | AI Enthusiast | Full‑Stack Developer

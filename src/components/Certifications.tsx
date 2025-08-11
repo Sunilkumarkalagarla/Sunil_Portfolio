@@ -55,7 +55,7 @@ const Certifications: React.FC = () => {
                   <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                 </div>
 
-                <Card className={`overflow-hidden ${cert.id === 'aws-developer-associate' ? 'bg-cert-sage' : 'bg-cert-slate'}`}>
+                <Card className="overflow-hidden bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
                       <img

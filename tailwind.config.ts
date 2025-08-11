@@ -82,7 +82,15 @@ export default {
 					ocean: 'hsl(var(--work-ocean))',
 					forest: 'hsl(var(--work-forest))',
 					dusk: 'hsl(var(--work-dusk))'
+				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					light: 'hsl(var(--gold-light))'
 				}
+			},
+			boxShadow: {
+				'popup': 'var(--shadow-popup)',
+				'popup-hover': 'var(--shadow-popup-hover)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -48,7 +48,7 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div key={index} className="bg-white border-2 border-gold rounded-lg p-6 shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center mb-4">
                 <div className={`w-4 h-4 ${category.color} rounded-full mr-3`}></div>
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
@@ -68,7 +68,7 @@ const Skills = () => {
         </div>
 
         {/* Proficiency Levels */}
-        <div className="mt-16 bg-white rounded-lg p-8 shadow-lg">
+        <div className="mt-16 bg-white border-2 border-gold rounded-lg p-8 shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Proficiency Levels</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">

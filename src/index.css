@@ -68,6 +68,12 @@
     --work-ocean: 195 45% 88%;
     --work-forest: 140 30% 88%;
     --work-dusk: 260 25% 88%;
+    
+    /* Golden border and shadow effects */
+    --gold: 45 100% 50%;
+    --gold-light: 48 100% 88%;
+    --shadow-popup: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-popup-hover: 0 20px 35px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.06);
   }
 
   .dark {

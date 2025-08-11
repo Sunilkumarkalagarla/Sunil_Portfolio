@@ -113,13 +113,7 @@ const Experience = () => {
                 )}
                 
                 {/* Content */}
-                <Card 
-                  className="flex-1 max-w-2xl border-2 text-black"
-                  style={{ 
-                    backgroundColor: backgroundColor,
-                    borderColor: borderColor
-                  }}
-                >
+                <Card className="flex-1 max-w-2xl bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1 text-black">
                   <CardHeader className="flex flex-row items-start justify-between gap-2">
                     <div>
                       <CardTitle className="text-lg font-bold">
@@ -132,16 +126,15 @@ const Experience = () => {
                     </div>
 
                     {/* Info action */}
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-4">
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
                             {item.externalLink ? (
                               <button
                                 aria-label="View LinkedIn"
-                                className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
+                                className="p-2 rounded-md border-2 border-gold bg-white text-foreground hover:bg-gold/10"
                                 onClick={() => window.open(item.externalLink!, '_blank', 'noopener,noreferrer')}
-                                style={{ borderColor: borderColor }}
                               >
                                 <Info className="w-5 h-5" />
                               </button>
@@ -150,8 +143,7 @@ const Experience = () => {
                                 <PopoverTrigger asChild>
                                   <button
                                     aria-label="View details"
-                                    className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
-                                    style={{ borderColor: borderColor }}
+                                    className="p-2 rounded-md border-2 border-gold bg-white text-foreground hover:bg-gold/10"
                                   >
                                     <Info className="w-5 h-5" />
                                   </button>

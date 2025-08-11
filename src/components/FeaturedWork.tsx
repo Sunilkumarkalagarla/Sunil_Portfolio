@@ -62,11 +62,7 @@ const FeaturedWork = () => {
           {placeholderCards.map((card) => {
             const IconComponent = card.icon;
             return (
-              <Card key={card.id} className={`hover:shadow-lg transition-shadow duration-300 border border-gray-200 group ${
-                card.id === 1 ? 'bg-work-terra' : 
-                card.id === 2 ? 'bg-work-ocean' : 
-                card.id === 3 ? 'bg-work-forest' : 'bg-work-dusk'
-              }`}>
+              <Card key={card.id} className="overflow-hidden h-full bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1 group">
                 <CardHeader className="text-center pb-4">
                   <div className={`mx-auto mb-4 w-16 h-16 ${card.gradientClass || (card.isLive ? 'bg-gradient-to-br from-purple-500 to-purple-600' : 'bg-gradient-to-br from-blue-500 to-blue-600')} rounded-full flex items-center justify-center`}>
                     {card.logo ? (

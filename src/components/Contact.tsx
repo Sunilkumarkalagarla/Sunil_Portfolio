@@ -114,7 +114,7 @@ const Contact = () => {
         <div className="flex justify-center">
           {/* Contact Information - Centered */}
           <div className="max-w-md space-y-8">
-            <Card className="shadow-lg">
+            <Card className="bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900">Contact Information</CardTitle>
               </CardHeader>
@@ -140,7 +140,7 @@ const Contact = () => {
             </Card>
 
             {/* Social Links */}
-            <Card className="shadow-lg">
+            <Card className="bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle className="text-xl font-bold">Connect With Me</CardTitle>
               </CardHeader>
@@ -161,7 +161,7 @@ const Contact = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="shadow-lg bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
+            <Card className="bg-white border-2 border-gold shadow-popup hover:shadow-popup-hover transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex items-center justify-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
