@@ -13,7 +13,7 @@ const Experience = () => {
       meta: 'Open to Roles | Present | Remote / Relocation',
       location: 'Remote',
       achievements: [] as string[],
-      token: '--primary',
+      token: 'timeline-green',
       externalLink: 'https://www.linkedin.com/in/sunil1249/'
     },
     {
@@ -27,7 +27,7 @@ const Experience = () => {
         'Automated live market-data ingestion with Kafka and Python, giving analysts sub-second updates on pricing and P&L',
         'Strengthened React dashboards and a Jenkins-based CI/CD pipeline, delivering two releases with zero critical defects',
       ],
-      token: '--secondary',
+      token: 'timeline-blue',
     },
     {
       title: 'Research Assistant',
@@ -40,7 +40,7 @@ const Experience = () => {
         'Built RESTful APIs backed by S3 that served 20+ requests/sec, halving data-retrieval time',
         'Tuned MongoDB and managed Git-based collaboration, cutting query latency 50% and streamlining team delivery',
       ],
-      token: '--accent',
+      token: 'timeline-purple',
     },
     {
       title: 'Resident Assistant',
@@ -50,7 +50,7 @@ const Experience = () => {
       achievements: [
         'Served as a Resident Assistant for the University Dorms of Purdue University in Hammond, Indiana during Summer 2023.',
       ],
-      token: '--destructive',
+      token: 'timeline-orange',
     },
     {
       title: 'Community Assistant',
@@ -60,7 +60,7 @@ const Experience = () => {
       achievements: [
         'Worked as a Community Assistant at Purdue University Dorms in Hammond, Indiana helping residents of Purdue University during Spring 2023.',
       ],
-      token: '--ring',
+      token: 'timeline-pink',
     },
     {
       title: 'Software Developer',
@@ -73,7 +73,7 @@ const Experience = () => {
         'Automated Tableau reporting and CI/CD pipelines, saving 15 hrs/week and shipping 5+ features per quarter',
         'Designed DynamoDB-backed microservices that served 50+ concurrent users, maintaining high performance under peak loads',
       ],
-      token: '--sidebar-primary',
+      token: 'timeline-cyan',
     },
     {
       title: 'Software Developer',
@@ -86,7 +86,7 @@ const Experience = () => {
         'Crafted PostgreSQL schemas and triggers to ensure data integrity for daily transactions',
         'Built Excel KPI dashboards with pivot tables and charts, giving stakeholders clear, up-to-date project metrics',
       ],
-      token: '--sidebar-accent',
+      token: 'timeline-yellow',
     },
   ];
 
@@ -108,12 +108,11 @@ const Experience = () => {
           <div className="space-y-10">
             {timeline.map((item, idx) => {
               const isRight = idx % 2 === 0; // alternate sides
-              const color = `hsl(var(${item.token}))`;
 
               const Content = (
                 <Card
-                  className="bg-card text-card-foreground border shadow-sm animate-enter hover-scale"
-                  style={{ borderLeftWidth: 4, borderColor: color }}
+                  className="bg-card text-card-foreground border shadow-sm animate-enter hover-scale text-foreground"
+                  style={{ backgroundColor: `hsl(var(--${item.token}))` }}
                 >
                   <CardHeader className="flex flex-row items-start justify-between gap-4">
                     <div>
@@ -133,9 +132,9 @@ const Experience = () => {
                             {item.externalLink ? (
                               <button
                                 aria-label="View LinkedIn"
-                                className="p-2 rounded-md border bg-background hover:bg-accent"
+                                className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
                                 onClick={() => window.open(item.externalLink!, '_blank', 'noopener,noreferrer')}
-                                style={{ color }}
+                                style={{ borderColor: `hsl(var(--${item.token}))` }}
                               >
                                 <Info className="w-5 h-5" />
                               </button>
@@ -144,8 +143,8 @@ const Experience = () => {
                                 <PopoverTrigger asChild>
                                   <button
                                     aria-label="View details"
-                                    className="p-2 rounded-md border bg-background hover:bg-accent"
-                                    style={{ color }}
+                                className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
+                                style={{ borderColor: `hsl(var(--${item.token}))` }}
                                   >
                                     <Info className="w-5 h-5" />
                                   </button>
@@ -184,7 +183,7 @@ const Experience = () => {
                   {/* timeline dot */}
                   <div
                     className="absolute left-1/2 top-3 -translate-x-1/2 w-3 h-3 rounded-full ring-4 ring-background"
-                    style={{ backgroundColor: color }}
+                    style={{ backgroundColor: `hsl(var(--${item.token}))` }}
                     aria-hidden="true"
                   />
 

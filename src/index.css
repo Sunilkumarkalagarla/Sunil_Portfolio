@@ -49,6 +49,15 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Timeline colors - light backgrounds with good contrast */
+    --timeline-green: 142 76% 85%;
+    --timeline-blue: 213 94% 85%;
+    --timeline-purple: 258 90% 85%;
+    --timeline-orange: 25 95% 85%;
+    --timeline-pink: 330 81% 85%;
+    --timeline-cyan: 189 94% 85%;
+    --timeline-yellow: 54 91% 85%;
   }
 
   .dark {
@@ -87,6 +96,15 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Timeline colors - darker backgrounds for dark mode */
+    --timeline-green: 142 30% 25%;
+    --timeline-blue: 213 40% 25%;
+    --timeline-purple: 258 35% 25%;
+    --timeline-orange: 25 40% 25%;
+    --timeline-pink: 330 30% 25%;
+    --timeline-cyan: 189 40% 25%;
+    --timeline-yellow: 54 35% 25%;
   }
 }
 
