@@ -1,108 +1,196 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Info } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 const Experience = () => {
-  const experiences = [
+  // Ordered latest (top) to past (bottom): 7 -> 1
+  const timeline = [
     {
-      title: "Software Developer",
-      company: "BNY Mellon",
-      period: "Mar 2025 - Jun 2025",
-      location: "Indiana, USA",
-      description: "Built Python/FastAPI services for trade execution, reconciliation, and cash management.",
+      title: 'Looking for Full Time opportunities',
+      meta: 'Open to Roles | Present | Remote / Relocation',
+      location: 'Remote',
+      achievements: [] as string[],
+      token: '--primary',
+      externalLink: 'https://www.linkedin.com/in/sunil1249/'
+    },
+    {
+      title: 'Software Developer',
+      company: 'BNY Mellon',
+      meta: 'Contract (Internship) | March 2025 - June 2025 | Remote (Hammond, IN)',
+      location: 'Remote (Hammond, IN)',
       achievements: [
         "Built Python/FastAPI services for trade execution, reconciliation, and cash management, cutting a key SQL query's latency by 40%",
-        "Designed new schemas and stored procedures that handle 15,000+ trades/min while meeting real-time compliance needs",
-        "Automated live market-data ingestion with Kafka and Python, giving analysts sub-second updates on pricing and P&L",
-        "Strengthened React dashboards and a Jenkins-based CI/CD pipeline, delivering two releases with zero critical defects"
+        'Designed new schemas and stored procedures that handle 15,000+ trades/min while meeting real-time compliance needs',
+        'Automated live market-data ingestion with Kafka and Python, giving analysts sub-second updates on pricing and P&L',
+        'Strengthened React dashboards and a Jenkins-based CI/CD pipeline, delivering two releases with zero critical defects',
       ],
-      color: "bg-blue-50 border-blue-200"
+      token: '--secondary',
     },
     {
-      title: "Python Developer (Research Assistant)",
-      company: "Purdue University",
-      period: "Sep 2024 - Dec 2024",
-      location: "Indiana, USA",
-      description: "Created serverless AWS Lambda workflows in Python to process high-volume campus transactions.",
+      title: 'Research Assistant',
+      company: 'Purdue University',
+      meta: 'Part Time | Fall 2024 | Hammond, IN',
+      location: 'Hammond, IN',
       achievements: [
-        "Created serverless AWS Lambda workflows in Python to process high-volume campus transactions with no manual intervention",
-        "Automated ETL and Power BI reporting, supplying insights to 50+ users and saving hours of monthly effort",
-        "Built RESTful APIs backed by S3 that served 20+ requests/sec, halving data-retrieval time",
-        "Tuned MongoDB and managed Git-based collaboration, cutting query latency 50% and streamlining team delivery"
+        'Created serverless AWS Lambda workflows in Python to process high-volume campus transactions with no manual intervention',
+        'Automated ETL and Power BI reporting, supplying insights to 50+ users and saving hours of monthly effort',
+        'Built RESTful APIs backed by S3 that served 20+ requests/sec, halving data-retrieval time',
+        'Tuned MongoDB and managed Git-based collaboration, cutting query latency 50% and streamlining team delivery',
       ],
-      color: "bg-purple-50 border-purple-200"
+      token: '--accent',
     },
     {
-      title: "Software Developer",
-      company: "Dell Technologies",
-      period: "Feb 2021 - Nov 2022",
-      location: "India",
-      description: "Engineered Python/Django REST APIs for payment and BI systems.",
-      achievements: [
-        "Engineered Python/Django REST APIs for payment and BI systems, trimming response time by 0.5s per request",
-        "Cleaned 300+ datasets with Pandas and boosted TensorFlow failure-detection models, improving accuracy and runtime",
-        "Automated Tableau reporting and CI/CD pipelines, saving 15 hrs/week and shipping 5+ features per quarter",
-        "Designed DynamoDB-backed microservices that served 50+ concurrent users, maintaining high performance under peak loads"
-      ],
-      color: "bg-green-50 border-green-200"
+      title: 'Resident Assistant',
+      company: 'Purdue University',
+      meta: 'Full Time | Summer 2023 | Hammond, IN',
+      location: 'Hammond, IN',
+      achievements: [],
+      token: '--destructive',
     },
     {
-      title: "Software Developer Intern",
-      company: "Trigent Software",
-      period: "Jul 2020 - Jan 2021",
-      location: "India",
-      description: "Optimized SQL queries and indexing, reducing execution time across web applications.",
+      title: 'Community Assistant',
+      company: 'Purdue University',
+      meta: 'Part Time | Spring 2023 | Hammond, IN',
+      location: 'Hammond, IN',
+      achievements: [],
+      token: '--ring',
+    },
+    {
+      title: 'Software Developer',
+      company: 'Dell Technologies',
+      meta: 'Full Time | Feb 2021 - Nov 2022 | India',
+      location: 'India',
       achievements: [
-        "Optimized SQL queries and indexing, reducing execution time by 30s across three web apps",
-        "Deployed an AWS Redshift warehouse, enabling near-real-time analytics and faster executive reports",
-        "Crafted PostgreSQL schemas and triggers to ensure data integrity for daily transactions",
-        "Built Excel KPI dashboards with pivot tables and charts, giving stakeholders clear, up-to-date project metrics"
+        'Engineered Python/Django REST APIs for payment and BI systems, trimming response time by 0.5s per request',
+        'Cleaned 300+ datasets with Pandas and boosted TensorFlow failure-detection models, improving accuracy and runtime',
+        'Automated Tableau reporting and CI/CD pipelines, saving 15 hrs/week and shipping 5+ features per quarter',
+        'Designed DynamoDB-backed microservices that served 50+ concurrent users, maintaining high performance under peak loads',
       ],
-      color: "bg-orange-50 border-orange-200"
-    }
+      token: '--sidebar-primary',
+    },
+    {
+      title: 'Software Developer',
+      company: 'Trigent Software',
+      meta: 'Internship | Jul 2020 - Jan 2021 | India',
+      location: 'India',
+      achievements: [
+        'Optimized SQL queries and indexing, reducing execution time by 30s across three web apps',
+        'Deployed an AWS Redshift warehouse, enabling near-real-time analytics and faster executive reports',
+        'Crafted PostgreSQL schemas and triggers to ensure data integrity for daily transactions',
+        'Built Excel KPI dashboards with pivot tables and charts, giving stakeholders clear, up-to-date project metrics',
+      ],
+      token: '--sidebar-accent',
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Experience</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            My journey through various roles has equipped me with diverse skills and perspectives
+        <header className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Experience</h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-6" aria-hidden="true"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A journey across roles and industries — latest to past
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {experiences.map((exp, index) => (
-            <Card key={index} className={`${exp.color} transition-all duration-300 hover:shadow-lg hover:scale-105`}>
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900">
-                  {exp.title}
-                </CardTitle>
-                <div className="flex flex-col gap-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-blue-600">{exp.company}</span>
-                    <span className="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">
-                      {exp.period}
-                    </span>
+        <div className="relative">
+          {/* Center vertical line */}
+          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-border" aria-hidden="true"></div>
+
+          <div className="space-y-10">
+            {timeline.map((item, idx) => {
+              const isRight = idx % 2 === 0; // alternate sides
+              const color = `hsl(var(${item.token}))`;
+
+              const Content = (
+                <Card
+                  className="bg-card text-card-foreground border shadow-sm animate-enter hover-scale"
+                  style={{ borderLeftWidth: 4, borderColor: color }}
+                >
+                  <CardHeader className="flex flex-row items-start justify-between gap-4">
+                    <div>
+                      <CardTitle className="text-xl font-bold">
+                        {item.title}
+                      </CardTitle>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {item.company ? `${item.company} | ${item.meta}` : item.meta}
+                      </p>
+                    </div>
+
+                    {/* Info action */}
+                    <div className="flex items-center">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            {item.externalLink ? (
+                              <button
+                                aria-label="View LinkedIn"
+                                className="p-2 rounded-md border bg-background hover:bg-accent"
+                                onClick={() => window.open(item.externalLink!, '_blank', 'noopener,noreferrer')}
+                                style={{ color }}
+                              >
+                                <Info className="w-5 h-5" />
+                              </button>
+                            ) : (
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <button
+                                    aria-label="View details"
+                                    className="p-2 rounded-md border bg-background hover:bg-accent"
+                                    style={{ color }}
+                                  >
+                                    <Info className="w-5 h-5" />
+                                  </button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-80">
+                                  {item.achievements && item.achievements.length > 0 ? (
+                                    <ul className="list-disc pl-5 space-y-2 text-sm text-foreground">
+                                      {item.achievements.map((a, i) => (
+                                        <li key={i}>{a}</li>
+                                      ))}
+                                    </ul>
+                                  ) : (
+                                    <p className="text-sm text-muted-foreground">Details coming soon.</p>
+                                  )}
+                                </PopoverContent>
+                              </Popover>
+                            )}
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            {item.externalLink ? 'View LinkedIn' : 'Click for details'}
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    {item.location && (
+                      <p className="text-sm text-muted-foreground">{item.location}</p>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+
+              return (
+                <div key={idx} className="relative">
+                  {/* timeline dot */}
+                  <div
+                    className="absolute left-1/2 top-3 -translate-x-1/2 w-3 h-3 rounded-full ring-4 ring-background"
+                    style={{ backgroundColor: color }}
+                    aria-hidden="true"
+                  />
+
+                  <div className={`md:w-1/2 ${isRight ? 'md:pl-8 md:ml-auto' : 'md:pr-8 md:mr-auto'}`}>
+                    {Content}
                   </div>
-                  <span className="text-sm text-gray-600 italic">{exp.location}</span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">{exp.description}</p>
-                <ul className="space-y-2">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-start">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
