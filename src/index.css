@@ -50,24 +50,24 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Timeline colors - light backgrounds with good contrast */
-    --timeline-green: 142 76% 85%;
-    --timeline-blue: 213 94% 85%;
-    --timeline-purple: 258 90% 85%;
-    --timeline-orange: 25 95% 85%;
-    --timeline-pink: 330 81% 85%;
-    --timeline-cyan: 189 94% 85%;
-    --timeline-yellow: 54 91% 85%;
+    /* Timeline colors - sophisticated light backgrounds */
+    --timeline-green: 160 60% 88%;
+    --timeline-blue: 200 70% 88%;
+    --timeline-purple: 270 50% 88%;
+    --timeline-orange: 30 75% 88%;
+    --timeline-pink: 340 60% 88%;
+    --timeline-cyan: 180 65% 88%;
+    --timeline-yellow: 45 70% 88%;
     
-    /* New interesting colors for certifications and featured work */
-    --cert-coral: 16 100% 92%;
-    --cert-mint: 142 76% 92%;
-    --cert-lavender: 240 100% 94%;
-    --cert-peach: 25 100% 92%;
-    --work-rose: 330 81% 94%;
-    --work-sky: 195 100% 85%;
-    --work-cream: 54 91% 92%;
-    --work-lilac: 300 76% 85%;
+    /* Professional colors for certifications and featured work */
+    --cert-sage: 120 25% 88%;
+    --cert-slate: 210 15% 88%;
+    --cert-warm: 20 35% 88%;
+    --cert-cool: 200 30% 88%;
+    --work-terra: 15 40% 88%;
+    --work-ocean: 195 45% 88%;
+    --work-forest: 140 30% 88%;
+    --work-dusk: 260 25% 88%;
   }
 
   .dark {

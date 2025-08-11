@@ -72,16 +72,16 @@ export default {
 					yellow: 'hsl(var(--timeline-yellow))'
 				},
 				cert: {
-					coral: 'hsl(var(--cert-coral))',
-					mint: 'hsl(var(--cert-mint))',
-					lavender: 'hsl(var(--cert-lavender))',
-					peach: 'hsl(var(--cert-peach))'
+					sage: 'hsl(var(--cert-sage))',
+					slate: 'hsl(var(--cert-slate))',
+					warm: 'hsl(var(--cert-warm))',
+					cool: 'hsl(var(--cert-cool))'
 				},
 				work: {
-					rose: 'hsl(var(--work-rose))',
-					sky: 'hsl(var(--work-sky))',
-					cream: 'hsl(var(--work-cream))',
-					lilac: 'hsl(var(--work-lilac))'
+					terra: 'hsl(var(--work-terra))',
+					ocean: 'hsl(var(--work-ocean))',
+					forest: 'hsl(var(--work-forest))',
+					dusk: 'hsl(var(--work-dusk))'
 				}
 			},
 			borderRadius: {

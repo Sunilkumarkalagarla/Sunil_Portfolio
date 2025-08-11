@@ -47,7 +47,7 @@ const Header = () => {
               onClick={() => scrollToSection('#hero')}
               className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
             >
-              <img src={pythonLogo} alt="Python" className="w-6 h-6" />
+              <img src="/lovable-uploads/4d6251ad-1e3b-4223-b146-335841955e73.png" alt="Python" className="w-6 h-6" />
               <span>SK</span>
             </button>
           </div>
