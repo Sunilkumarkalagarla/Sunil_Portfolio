@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Info } from 'lucide-react';
@@ -143,8 +142,8 @@ const Experience = () => {
                                 <PopoverTrigger asChild>
                                   <button
                                     aria-label="View details"
-                                className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
-                                style={{ borderColor: `hsl(var(--${item.token}))` }}
+                                    className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
+                                    style={{ borderColor: `hsl(var(--${item.token}))` }}
                                   >
                                     <Info className="w-5 h-5" />
                                   </button>
