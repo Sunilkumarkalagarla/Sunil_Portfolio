@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Sunil Kumar Kalagarla</h3>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <h3 className="text-2xl font-bold mb-4 text-white">Sunil Kumar Kalagarla</h3>
+            <p className="text-gray-200 mb-6 max-w-md font-medium">
               Software Engineer passionate about creating innovative solutions and meaningful digital experiences. 
               Always excited to take on new challenges and collaborate on impactful projects.
             </p>
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               {['About', 'Experience', 'Certifications', 'Featured Work', 'Contact'].map((item) => (
                 <li key={item}>
@@ -61,7 +61,7 @@ const Footer = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                    className="text-gray-200 hover:text-white transition-colors duration-200 font-medium"
                   >
                     {item}
                   </button>
@@ -72,10 +72,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-200 text-sm font-medium">
             © {currentYear} Sunil Kumar Kalagarla. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-4 md:mt-0">
+          <p className="text-gray-200 text-sm mt-4 md:mt-0 font-medium">
             Greater Chicago, USA | Built with React, TypeScript & Tailwind CSS
           </p>
         </div>

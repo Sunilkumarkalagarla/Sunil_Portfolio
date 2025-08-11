@@ -17,7 +17,7 @@ const Hero = () => {
                   alt="Python Logo" 
                   className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24"
                 />
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight break-words">
                   Sunil Kumar Kalagarla
                 </h1>
               </div>

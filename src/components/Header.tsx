@@ -95,7 +95,7 @@ const Header = () => {
           </div>
         )}
       </nav>
-      <div role="status" aria-live="polite" className="bg-destructive text-destructive-foreground">
+      <div role="status" aria-live="polite" className="bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-sm sm:text-sm flex flex-row flex-wrap items-center justify-center gap-3">
           <span>
             Currently looking for Full Time opportunities as a Software Development Engineer
