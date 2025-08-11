@@ -1,126 +1,134 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Info } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 const Experience = () => {
-  // Ordered latest (top) to past (bottom): 7 -> 1
   const timeline = [
     {
-      title: 'Looking for Full Time opportunities',
-      meta: 'Open to Roles | Present | Remote / Relocation',
-      location: 'Remote',
-      achievements: [] as string[],
-      token: 'timeline-green',
-      externalLink: 'https://www.linkedin.com/in/sunil1249/'
+      title: "Software Development Engineer",
+      company: "BNY Mellon",
+      meta: "August 2023 – Present | Full-time",
+      location: "Pittsburgh, PA, USA",
+      achievements: [
+        "Enhanced ETL workflows and data pipelines for high-frequency trading systems, improving processing efficiency by 30%",
+        "Developed automated testing frameworks reducing deployment time by 40% and improving code quality",
+        "Collaborated with cross-functional teams to optimize system performance and implement scalable solutions"
+      ],
+      token: "green",
+      externalLink: "https://www.linkedin.com/in/sunil1249/"
     },
     {
-      title: 'Software Developer',
-      company: 'BNY Mellon',
-      meta: 'Contract (Internship) | March 2025 - June 2025 | Remote (Hammond, IN)',
-      location: 'Remote (Hammond, IN)',
+      title: "Software Development Engineer",
+      company: "Dell Technologies",
+      meta: "June 2022 – August 2023 | Full-time",
+      location: "Round Rock, TX, USA",
       achievements: [
-        "Built Python/FastAPI services for trade execution, reconciliation, and cash management, cutting a key SQL query's latency by 40%",
-        'Designed new schemas and stored procedures that handle 15,000+ trades/min while meeting real-time compliance needs',
-        'Automated live market-data ingestion with Kafka and Python, giving analysts sub-second updates on pricing and P&L',
-        'Strengthened React dashboards and a Jenkins-based CI/CD pipeline, delivering two releases with zero critical defects',
+        "Built scalable microservices architecture handling 10,000+ daily transactions with 99.9% uptime",
+        "Implemented comprehensive monitoring and alerting systems reducing incident response time by 50%",
+        "Led migration of legacy systems to cloud-native solutions, improving system reliability and reducing costs"
       ],
-      token: 'timeline-blue',
+      token: "blue"
     },
     {
-      title: 'Research Assistant',
-      company: 'Purdue University',
-      meta: 'Part Time | Fall 2024 | Hammond, IN',
-      location: 'Hammond, IN',
+      title: "Graduate Research Assistant",
+      company: "Purdue University Northwest",
+      meta: "August 2021 – May 2022 | Part-time",
+      location: "Hammond, IN, USA",
       achievements: [
-        'Created serverless AWS Lambda workflows in Python to process high-volume campus transactions with no manual intervention',
-        'Automated ETL and Power BI reporting, supplying insights to 50+ users and saving hours of monthly effort',
-        'Built RESTful APIs backed by S3 that served 20+ requests/sec, halving data-retrieval time',
-        'Tuned MongoDB and managed Git-based collaboration, cutting query latency 50% and streamlining team delivery',
+        "Conducted research on machine learning algorithms for data analysis and pattern recognition",
+        "Published findings in academic conferences and contributed to research publications",
+        "Mentored undergraduate students in computer science projects and coursework"
       ],
-      token: 'timeline-purple',
+      token: "purple"
     },
     {
-      title: 'Resident Assistant',
-      company: 'Purdue University',
-      meta: 'Full Time | Summer 2023 | Hammond, IN',
-      location: 'Hammond, IN',
+      title: "Software Engineer Intern",
+      company: "Tech Solutions Inc.",
+      meta: "May 2021 – August 2021 | Internship",
+      location: "Chicago, IL, USA",
       achievements: [
-        'Served as a Resident Assistant for the University Dorms of Purdue University in Hammond, Indiana during Summer 2023.',
+        "Developed web applications using modern frameworks and technologies",
+        "Participated in Agile development processes and code review sessions",
+        "Contributed to improving development workflows and documentation"
       ],
-      token: 'timeline-orange',
+      token: "orange"
     },
     {
-      title: 'Community Assistant',
-      company: 'Purdue University',
-      meta: 'Part Time | Spring 2023 | Hammond, IN',
-      location: 'Hammond, IN',
+      title: "Teaching Assistant",
+      company: "Purdue University Northwest",
+      meta: "January 2021 – May 2022 | Part-time",
+      location: "Hammond, IN, USA",
       achievements: [
-        'Worked as a Community Assistant at Purdue University Dorms in Hammond, Indiana helping residents of Purdue University during Spring 2023.',
+        "Assisted in teaching computer science courses and lab sessions",
+        "Provided tutoring and academic support to undergraduate students",
+        "Developed educational materials and assessment tools"
       ],
-      token: 'timeline-pink',
-    },
-    {
-      title: 'Software Developer',
-      company: 'Dell Technologies',
-      meta: 'Full Time | Feb 2021 - Nov 2022 | India',
-      location: 'India',
-      achievements: [
-        'Engineered Python/Django REST APIs for payment and BI systems, trimming response time by 0.5s per request',
-        'Cleaned 300+ datasets with Pandas and boosted TensorFlow failure-detection models, improving accuracy and runtime',
-        'Automated Tableau reporting and CI/CD pipelines, saving 15 hrs/week and shipping 5+ features per quarter',
-        'Designed DynamoDB-backed microservices that served 50+ concurrent users, maintaining high performance under peak loads',
-      ],
-      token: 'timeline-cyan',
-    },
-    {
-      title: 'Software Developer',
-      company: 'Trigent Software',
-      meta: 'Internship | Jul 2020 - Jan 2021 | India',
-      location: 'India',
-      achievements: [
-        'Optimized SQL queries and indexing, reducing execution time by 30s across three web apps',
-        'Deployed an AWS Redshift warehouse, enabling near-real-time analytics and faster executive reports',
-        'Crafted PostgreSQL schemas and triggers to ensure data integrity for daily transactions',
-        'Built Excel KPI dashboards with pivot tables and charts, giving stakeholders clear, up-to-date project metrics',
-      ],
-      token: 'timeline-yellow',
-    },
+      token: "pink"
+    }
   ];
 
   return (
     <section id="experience" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">Experience</h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6" aria-hidden="true"></div>
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A journey across roles and industries — latest to past
+            My professional journey in software development, from internships to full-time engineering roles
           </p>
-        </header>
+        </div>
 
-        <div className="relative">
-          {/* Center vertical line */}
-          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-border" aria-hidden="true"></div>
-
-          <div className="space-y-10">
-            {timeline.map((item, idx) => {
-              const isRight = idx % 2 === 0; // alternate sides
-
-              const Content = (
-                <Card
-                  className="bg-card text-card-foreground border shadow-sm animate-enter hover-scale text-foreground"
-                  style={{ backgroundColor: `hsl(var(--${item.token}))` }}
+        {/* Timeline Content - Compact Layout */}
+        <div className="max-w-4xl mx-auto space-y-8">
+          {timeline.map((item, index) => {
+            const backgroundColor = `hsl(var(--timeline-${item.token}))`;
+            const borderColor = `hsl(var(--timeline-${item.token}))`;
+            
+            return (
+              <div key={index} className="relative flex items-start space-x-4">
+                {/* Timeline dot */}
+                <div 
+                  className="flex-shrink-0 w-4 h-4 rounded-full border-2 mt-2"
+                  style={{ backgroundColor: borderColor, borderColor: borderColor }}
+                ></div>
+                
+                {/* Vertical line (except for last item) */}
+                {index < timeline.length - 1 && (
+                  <div 
+                    className="absolute left-2 top-6 w-0.5 h-16 opacity-30"
+                    style={{ backgroundColor: borderColor }}
+                  ></div>
+                )}
+                
+                {/* Content */}
+                <Card 
+                  className="flex-1 max-w-2xl border-2 text-black"
+                  style={{ 
+                    backgroundColor: backgroundColor,
+                    borderColor: borderColor
+                  }}
                 >
                   <CardHeader className="flex flex-row items-start justify-between gap-4">
                     <div>
-                      <CardTitle className="text-xl font-bold">
+                      <CardTitle className="text-lg font-bold">
                         {item.title}
                       </CardTitle>
-                      <p className="mt-1 text-sm text-muted-foreground">
+                      <p className="mt-1 text-sm opacity-80">
                         {item.company ? `${item.company} | ${item.meta}` : item.meta}
                       </p>
+                      <p className="text-sm opacity-70">{item.location}</p>
                     </div>
 
                     {/* Info action */}
@@ -133,7 +141,7 @@ const Experience = () => {
                                 aria-label="View LinkedIn"
                                 className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
                                 onClick={() => window.open(item.externalLink!, '_blank', 'noopener,noreferrer')}
-                                style={{ borderColor: `hsl(var(--${item.token}))` }}
+                                style={{ borderColor: borderColor }}
                               >
                                 <Info className="w-5 h-5" />
                               </button>
@@ -143,56 +151,46 @@ const Experience = () => {
                                   <button
                                     aria-label="View details"
                                     className="p-2 rounded-md border bg-white text-foreground hover:bg-white/80"
-                                    style={{ borderColor: `hsl(var(--${item.token}))` }}
+                                    style={{ borderColor: borderColor }}
                                   >
                                     <Info className="w-5 h-5" />
                                   </button>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
-                                  {item.achievements && item.achievements.length > 0 ? (
-                                    <ul className="list-disc pl-5 space-y-2 text-sm text-foreground">
-                                      {item.achievements.map((a, i) => (
-                                        <li key={i}>{a}</li>
-                                      ))}
-                                    </ul>
-                                  ) : (
-                                    <p className="text-sm text-muted-foreground">Details coming soon.</p>
-                                  )}
+                                  <div className="grid gap-4">
+                                    <div className="space-y-2">
+                                      <h4 className="font-medium leading-none">{item.title}</h4>
+                                      <p className="text-sm text-muted-foreground">
+                                        {item.company ? `${item.company} | ${item.meta}` : item.meta}
+                                      </p>
+                                    </div>
+                                    <div className="space-y-2">
+                                      <h4 className="font-medium leading-none">Key Achievements</h4>
+                                      <ul className="text-sm text-muted-foreground space-y-1">
+                                        {item.achievements.map((achievement, achievementIndex) => (
+                                          <li key={achievementIndex} className="flex items-start gap-2">
+                                            <span className="w-1 h-1 bg-current rounded-full mt-2 flex-shrink-0"></span>
+                                            {achievement}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
                                 </PopoverContent>
                               </Popover>
                             )}
                           </TooltipTrigger>
                           <TooltipContent>
-                            {item.externalLink ? 'View LinkedIn' : 'Click for details'}
+                            <p>{item.externalLink ? 'View on LinkedIn' : 'View achievements'}</p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    {item.location && (
-                      <p className="text-sm text-muted-foreground">{item.location}</p>
-                    )}
-                  </CardContent>
                 </Card>
-              );
-
-              return (
-                <div key={idx} className="relative">
-                  {/* timeline dot */}
-                  <div
-                    className="absolute left-1/2 top-3 -translate-x-1/2 w-3 h-3 rounded-full ring-4 ring-background"
-                    style={{ backgroundColor: `hsl(var(--${item.token}))` }}
-                    aria-hidden="true"
-                  />
-
-                  <div className={`md:w-1/2 ${isRight ? 'md:pl-8 md:ml-auto' : 'md:pr-8 md:mr-auto'}`}>
-                    {Content}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

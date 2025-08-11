@@ -29,7 +29,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Location</h4>
-                  <p className="text-gray-600">Greater Chicago, USA</p>
+                  <p className="text-gray-600">Hammond, IN</p>
                 </div>
               </div>
             </div>

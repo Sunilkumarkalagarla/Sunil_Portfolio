@@ -70,6 +70,18 @@ export default {
 					pink: 'hsl(var(--timeline-pink))',
 					cyan: 'hsl(var(--timeline-cyan))',
 					yellow: 'hsl(var(--timeline-yellow))'
+				},
+				cert: {
+					coral: 'hsl(var(--cert-coral))',
+					mint: 'hsl(var(--cert-mint))',
+					lavender: 'hsl(var(--cert-lavender))',
+					peach: 'hsl(var(--cert-peach))'
+				},
+				work: {
+					rose: 'hsl(var(--work-rose))',
+					sky: 'hsl(var(--work-sky))',
+					cream: 'hsl(var(--work-cream))',
+					lilac: 'hsl(var(--work-lilac))'
 				}
 			},
 			borderRadius: {

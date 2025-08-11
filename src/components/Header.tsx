@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import pythonLogo from '@/assets/python-logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -44,9 +45,10 @@ const Header = () => {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('#hero')}
-              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
             >
-              SK
+              <img src={pythonLogo} alt="Python" className="w-6 h-6" />
+              <span>SK</span>
             </button>
           </div>
 

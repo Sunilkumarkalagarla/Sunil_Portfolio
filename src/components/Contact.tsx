@@ -80,7 +80,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      content: "Greater Chicago, USA",
+      content: "Hammond, IN",
       action: null
     }
   ];
@@ -111,79 +111,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-gray-900">Send a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <Input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full"
-                    placeholder="Tell me about your project or inquiry..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg transition-all duration-200 hover:scale-105"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
-                <p className="mt-3 text-xs text-gray-500">
-                  By submitting, you agree your info will be sent to Formspree for processing. 
-                  <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline">Privacy Policy</a>.
-                </p>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
+        <div className="flex justify-center">
+          {/* Contact Information - Centered */}
+          <div className="max-w-md space-y-8">
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900">Contact Information</CardTitle>
@@ -192,17 +122,17 @@ const Contact = () => {
                 {contactInfo.map((info, index) => (
                   <div 
                     key={index} 
-                    className={`flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 ${
+                    className={`flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 ${
                       info.action ? 'cursor-pointer' : ''
                     }`}
                     onClick={info.action || undefined}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                    <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                      <p className="text-gray-600">{info.content}</p>
+                      <h3 className="font-semibold text-foreground">{info.title}</h3>
+                      <p className="text-muted-foreground">{info.content}</p>
                     </div>
                   </div>
                 ))}
@@ -212,15 +142,15 @@ const Contact = () => {
             {/* Social Links */}
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-900">Connect With Me</CardTitle>
+                <CardTitle className="text-xl font-bold">Connect With Me</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex space-x-6">
+                <div className="flex justify-center space-x-6">
                   {socialLinks.map((link, index) => (
                     <button
                       key={index}
                       onClick={() => window.open(link.url, '_blank', 'noopener,noreferrer')}
-                      className={`p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-200 hover:scale-110 ${link.color}`}
+                      className="p-3 rounded-full bg-accent hover:bg-accent/80 transition-all duration-200 hover:scale-110 text-foreground"
                       title={link.name}
                     >
                       {link.icon}
@@ -231,13 +161,13 @@ const Contact = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+            <Card className="shadow-lg bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
               <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
+                <div className="flex items-center justify-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold text-gray-900">Available for new opportunities</span>
+                  <span className="font-semibold">Available for new opportunities</span>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground text-center">
                   I'm currently open to full-time positions and interesting freelance projects. 
                   Let's discuss how I can contribute to your team!
                 </p>

@@ -58,6 +58,16 @@
     --timeline-pink: 330 81% 85%;
     --timeline-cyan: 189 94% 85%;
     --timeline-yellow: 54 91% 85%;
+    
+    /* New interesting colors for certifications and featured work */
+    --cert-coral: 16 100% 92%;
+    --cert-mint: 142 76% 92%;
+    --cert-lavender: 240 100% 94%;
+    --cert-peach: 25 100% 92%;
+    --work-rose: 330 81% 94%;
+    --work-sky: 195 100% 85%;
+    --work-cream: 54 91% 92%;
+    --work-lilac: 300 76% 85%;
   }
 
   .dark {
