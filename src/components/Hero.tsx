@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white pt-24">
+    <section className="min-h-screen flex items-center justify-center pt-24 relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content Section */}
@@ -26,9 +26,10 @@ const Hero = () => {
                 Software Engineer | AI Enthusiast | Full‑Stack Developer
               </p>
               
-              <p className="text-lg text-gray-500 mb-12 max-w-2xl">
-                Crafting innovative solutions with 3+ years of experience in software development, 
-                AI/ML, and full-stack technologies. Passionate about creating impactful digital experiences.
+              <p className="text-lg text-gray-700 mb-12 max-w-2xl">
+                I'm Sunil Kumar Kalagarla, a curious problem-solver who loves turning ideas into working technology. 
+                From tinkering with Python scripts to deploying cloud solutions, I enjoy building things that make life easier. 
+                Outside of coding, I'm always exploring new tech trends, learning, and finding creative ways to solve real-world problems.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
