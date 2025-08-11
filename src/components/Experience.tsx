@@ -47,7 +47,9 @@ const Experience = () => {
       company: 'Purdue University',
       meta: 'Full Time | Summer 2023 | Hammond, IN',
       location: 'Hammond, IN',
-      achievements: [],
+      achievements: [
+        'Served as a Resident Assistant for the University Dorms of Purdue University in Hammond, Indiana during Summer 2023.',
+      ],
       token: '--destructive',
     },
     {
@@ -55,7 +57,9 @@ const Experience = () => {
       company: 'Purdue University',
       meta: 'Part Time | Spring 2023 | Hammond, IN',
       location: 'Hammond, IN',
-      achievements: [],
+      achievements: [
+        'Worked as a Community Assistant at Purdue University Dorms in Hammond, Indiana helping residents of Purdue University during Spring 2023.',
+      ],
       token: '--ring',
     },
     {
