@@ -95,23 +95,6 @@ const Header = () => {
           </div>
         )}
       </nav>
-      <div role="status" aria-live="polite" className="bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-center text-sm sm:text-sm flex flex-row flex-wrap items-center justify-center gap-3">
-          <span>
-            Currently looking for Full Time opportunities as a Software Development Engineer
-          </span>
-          <Button asChild size="sm" variant="secondary" className="shrink-0">
-            <a
-              href="https://www.linkedin.com/in/sunil1249/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Reach out to me on LinkedIn"
-            >
-              Connect With Me
-            </a>
-          </Button>
-        </div>
-      </div>
     </header>
   );
 };
